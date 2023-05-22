@@ -26,7 +26,7 @@ resource "null_resource" "app" {
       }
 
       inline = [
-          "ansible-pull -U https://github.com/devops-anilkumar/ansible.git -e COMPONENT=rabbitmq -e ENV=dev robot-pull.yml"
+          "ansible-pull -U https://github.com/devops-anilkumar/ansible.git -e COMPONENT=rabbitmq -e ENV=dev robot-pull.yaml"
         ]
     }
 }
