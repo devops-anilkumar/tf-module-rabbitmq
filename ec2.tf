@@ -20,8 +20,8 @@ resource "null_resource" "app" {
   provisioner "remote-exec" {
     connection {
       type     = "ssh"
-      user     = centos   //local.SSH_USERNAME
-      password = DevOps321   //local.SSH_PASSWORD
+      user     = centos  
+      password = DevOps321   
       host     = aws_spot_instance_request.rabbitmq.private_ip
       }
 
