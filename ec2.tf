@@ -1,4 +1,4 @@
-# Creates SPOT Servers
+# CREATING SPOTSERVERs
 resource "aws_spot_instance_request" "rabbitmq" {
   ami                     = data.aws_ami.lab-image.id
   instance_type           = "t2.micro"
@@ -13,7 +13,7 @@ resource "aws_spot_instance_request" "rabbitmq" {
 }
 
 
-# Installing RabbitMQ
+# CREATING RABBITMQ
 
 resource "null_resource" "app" {
 
