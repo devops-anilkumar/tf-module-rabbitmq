@@ -1,29 +1,31 @@
-# Fetches the information of the remote statefile, here in our case, this will fetch the information of the VPC Statefile
+# RETRIVES THE INFORMATION FROM THE REMOTE STATE FILE
 data "terraform_remote_state" "vpc" {
   backend = "s3"
   config = {
-    bucket = "b53-tfstate-bucket"
-    key    = "vpc/${var.ENV}/terraform.tfstate"
+    bucket = "state-terraformbucket"
+    key = "vpc/${var.ENV}/terraform.tfstate"
     region = "us-east-1"
-   }
+  }
 }
 
-# This is to read the information from the tf alb backend module
+
+# RETRIVES THE INFORMATION FROM THE REMOTE STATE FILE ALB
 data "terraform_remote_state" "alb" {
   backend = "s3"
   config = {
-    bucket = "b53-tfstate-bucket"
-    key    = "alb/${var.ENV}/terraform.tfstate"
+    bucket = "state-terraformbucket"
+    key = "alb/${var.ENV}/terraform.tfstate"
     region = "us-east-1"
-   }
+  }
 }
 
+# RETRIVES THE INFORMATION FROM THE REMOTE STATE FILE databases
 data "terraform_remote_state" "db" {
   backend = "s3"
   config = {
-        bucket = "b53-tfstate-bucket"
-        key    = "databases/${var.ENV}/terraform.tfstate"
-        region = "us-east-1"
+    bucket = "state-terraformbucket"
+    key = "databases/${var.ENV}/terraform.tfstate"
+    region = "us-east-1"
   }
 }
 
