@@ -20,8 +20,8 @@ resource "null_resource" "app" {
   provisioner "remote-exec" {
     connection {
       type     = "ssh"
-      user     = local.SSH_USERNAME
-      password = local.SSH_PASSWORD
+      user     = local.SSH_USER
+      password = local.SSH_PASS
       host     = aws_spot_instance_request.rabbitmq.private_ip
       }
 
