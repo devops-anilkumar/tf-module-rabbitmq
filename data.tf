@@ -32,7 +32,7 @@ data "terraform_remote_state" "db" {
 # This is to read the information of the AMI
 data "aws_ami" "lab-image" {
   most_recent      = true
-  name_regex       = "my linux ami"
+  name_regex       = "Ami-with-Ansible-Installed"
   owners           = ["self"]
 }
 
